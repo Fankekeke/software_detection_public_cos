@@ -66,7 +66,7 @@ public class DetectionTemplateInfoServiceImpl extends ServiceImpl<DetectionTempl
                 }
             }
             if ("3".equals(type)) {
-                if (detectionTemplateInfo.getCheckType().contains("发货检验")) {
+                if (detectionTemplateInfo.getCheckType().contains("专家检验")) {
                     detectionIds.add(detectionTemplateInfo.getId());
                 }
             }
