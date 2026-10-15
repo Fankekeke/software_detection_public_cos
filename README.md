@@ -1,13 +1,17 @@
-<p><img align="center" src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png" alt="fankekeke" /></p>
+![](https://img.shields.io/badge/License-MIT-blue.svg)
 
-### 基于SpringBoot + Vue的软件检测系统.
+![](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
 
-软件测试平台、代码质量检测系统、软件缺陷分析系统
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-#### 项目介绍
-###### 客户管理：维护委托检测的客户信息、联系人及合作记录。检测项管理：定义和管理各类软件检测的具体检查条目。检测模板：创建标准化检测流程模板，提升检测效率。常见缺陷：收录典型软件缺陷案例，用于参考与比对。项目模块：按软件项目划分检测任务，跟踪各模块进度。工单管理：生成、分配和跟踪每项检测任务的执行工单。员工管理：管理检测人员、测试工程师及权限配置。环境管理：配置和记录测试所需的软硬件运行环境。检测机构：管理合作或内部检测机构的基本信息与资质。内部检测：执行企业内部团队开展的软件质量检测流程。外部检验：协调第三方机构进行独立软件检测与认证。专家检验：邀请领域专家参与高风险或复杂项目的评审。系统管理：配置用户角色、权限、日志及基础系统参数。统计看板：可视化展示缺陷分布、检测通过率、项目进度等关键指标。
+# 基于 SpringBoot + Vue 的软件检测系统 (Software Detection System)
+
+检测工单 · 检测模板 · 缺陷库 · 多类型检测 · 统计看板 · 客户与机构管理
+
+本项目是一套面向第三方软件测评机构与企业质量管理部门的软件检测管理系统，覆盖“客户委托—检测任务—内部检测/外部检验/专家检验—缺陷记录—检测报告—统计看板”的全流程。系统由管理员统一管理客户、员工、检测机构、检测项、检测模板、常见缺陷、项目模块、工单、环境、统计看板及系统配置，支持内部检测、外部检验与专家检验三种检测执行方式，适用于软件测评中心、CNAS 检测实验室、企业软件测试管理平台、软件质量委托检测平台等场景。
 
 #### 安装环境
+️**注意**：请确保您的开发环境已安装以下依赖。
 
 JAVA 环境 
 
@@ -15,27 +19,166 @@ Node.js环境 [https://nodejs.org/en/] 选择14.17
 
 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs
 
-Mysql 数据库 [https://blog.csdn.net/qq_40303031/article/details/88935262] 一定要把账户和密码记住
+Mysql 数据库 一定要把账户和密码记住
 
 redis
 
-Idea 编译器 [https://blog.csdn.net/weixin_44505194/article/details/104452880]
+Idea 编译器
 
-WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
+WebStorm OR VScode 编译器
 
 #### 采用技术及功能
 
 后端：SpringBoot、MybatisPlus、MySQL、Redis、
 前端：Vue、Apex、Antd、Axios
 
-平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)
+平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + 百度地图 API
 
 平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)
 
 开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok
 
-##### 管理员：
-客户管理、检测项管理、检测模板、常见缺陷、项目模块、工单管理、员工管理、环境管理、检测机构、内部检测、外部检验、专家检验、系统管理、统计看板
+---
+
+## 核心特性
+
+- **客户委托管理**：维护客户单位、联系人、委托项目、合同信息与检测报告交付记录，支持客户历史委托查询。
+- **检测项与检测模板**：按功能、性能、安全、兼容性、可靠性等维度维护检测项，并沉淀为可复用的检测模板，减少重复配置。
+- **常见缺陷库**：沉淀软件检测中的高频缺陷类型、严重等级、复现要点与处理建议，支持缺陷分类检索与统计。
+- **项目模块管理**：围绕委托项目维护被测软件模块、检测范围、检测标准与检测进度，形成项目级质量视图。
+- **工单全流程管理**：支持检测工单创建、分配、执行、复核、审批、退回、归档与报告生成，实现检测过程可追溯。
+- **多类型检测执行**：支持内部检测、外部检验、专家检验三种执行模式，可分别记录执行机构、专家信息、检验结论与附件材料。
+- **员工与角色管理**：管理检测员、项目经理、审核人员、专家库成员等员工信息，并配置相应操作权限。
+- **环境管理**：维护测试环境、预发布环境、硬件配置、操作系统、浏览器、数据库及网络条件，保障检测结果可复现。
+- **检测机构管理**：维护合作检测机构、资质信息、检测能力范围与历史检验记录，支撑外部检验业务。
+- **统计看板**：展示工单数量、缺陷分布、检测通过率、客户委托趋势、员工工作量、检测机构绩效等可视化指标。
+---
+
+## 适用场景
+
+- 第三方软件测评机构
+- CNAS 软件检测实验室
+- 企业软件测试管理平台
+- 软件质量委托检测系统
+- 政务软件验收检测平台
+- 金融、医疗、工业软件质量检测系统
+- 高校或科研机构软件质量评估平台
+- 软件外包项目质量验收管理系统
+---
+
+## 功能模块概览
+
+### 客户管理
+
+- 维护客户单位、联系人、联系方式、所属行业与委托记录。
+- 支持客户委托历史、检测报告、未结工单与欠费信息查询。
+- 支持客户等级、合同有效期与检测报告交付方式管理。
+
+### 检测项管理
+
+- 维护检测项名称、检测类型、检测标准、判定规则与优先级。
+- 支持功能测试、性能测试、安全测试、兼容性测试、可靠性测试等分类。
+- 支持检测项启用/停用、排序、版本管理与批量导入。
+
+### 检测模板
+
+- 将常用检测项组合为模板，如“Web 系统功能检测模板”“性能压力检测模板”。
+- 支持模板关联检测标准、抽样规则、合格判定条件与附件说明。
+- 创建工单时可直接引用模板，快速生成检测任务。
+
+### 常见缺陷
+
+- 维护缺陷名称、缺陷类型、严重等级、复现步骤与处理建议。
+- 支持缺陷与检测项、项目模块、工单关联，形成缺陷知识库。
+- 支持缺陷统计，分析高频缺陷、严重缺陷与缺陷趋势。
+
+### 项目模块
+
+- 围绕委托项目管理被测软件模块、检测范围与检测进度。
+- 支持模块关联检测项、缺陷记录与工单执行情况。
+- 支持项目状态跟踪，包括待检测、检测中、复核中、已完成、已归档。
+
+### 工单管理
+
+- 支持检测工单创建、分配、执行、提交、复核、审批、退回与归档。
+- 工单可关联客户、项目、检测模板、检测环境、执行人员与检测机构。
+- 支持工单优先级、截止时间、检测结论、报告编号与附件管理。
+- 支持工单状态流转记录，实现检测过程全程可追溯。
+
+### 员工管理
+
+- 维护员工姓名、工号、岗位、角色、联系方式与所属部门。
+- 支持检测员、项目经理、审核人员、系统管理员等角色配置。
+- 支持员工工作量统计，包括承接工单数、已完成工单数与缺陷发现数。
+
+### 环境管理
+
+- 维护测试环境名称、环境类型、硬件配置、操作系统、浏览器、数据库与网络条件。
+- 支持环境状态管理，包括可用、占用、维护中、已停用。
+- 工单执行时可绑定检测环境，确保检测结果具备复现条件。
+
+### 检测机构
+
+- 维护外部检测机构名称、资质类型、检测能力范围与联系人信息。
+- 支持机构历史检验记录、合作状态与评价信息管理。
+- 外部检验工单可关联检测机构，记录检验结论与报告文件。
+
+### 内部检测
+
+- 由内部检测员执行检测任务，记录检测过程、检测结果与缺陷信息。
+- 支持检测数据录入、缺陷提交、截图上传与检测结论填写。
+- 检测完成后可提交项目经理或审核人员复核。
+
+### 外部检验
+
+- 将工单委托给外部检测机构执行，记录委托时间、返回时间与检验报告。
+- 支持外部检验结论、报告编号、附件上传与检验状态跟踪。
+- 可与检测机构绩效统计联动，评估外部检验质量与时效。
+
+### 专家检验
+
+- 从专家库中选择专家参与复杂项目或争议项目检验。
+- 记录专家意见、检验结论、评分建议与专家签字信息。
+- 支持专家检验报告单独归档，并关联对应工单与项目。
+
+### 系统管理
+
+- 管理用户账号、角色、菜单权限与数据权限。
+- 维护数据字典，如检测类型、缺陷等级、工单状态、环境类型。
+- 支持操作日志、登录日志、公告通知与系统参数配置。
+
+### 统计看板
+
+- 展示工单总数、待处理工单、进行中工单、已完成工单等核心指标。
+- 展示缺陷数量、缺陷等级分布、缺陷趋势与高频缺陷排行。
+- 展示客户委托趋势、员工工作量、检测机构绩效与项目完成情况。
+- 支持按时间范围、客户、项目、检测类型与执行人员进行筛选统计。
+
+---
+
+## 项目结构
+
+```text
+pharmacy-dispensing-system/
+├── backend/            # 后端 API 服务
+│   ├── src/
+│   │   ├── controllers/  # 控制器
+│   │   ├── models/       # 数据模型
+│   │   ├── routes/       # 路由
+│   │   └── services/     # 业务逻辑
+│   └── package.json
+├── frontend/           # 前端 Web 应用
+│   ├── src/
+│   │   ├── views/      # 页面视图
+│   │   ├── components/ # 公共组件
+│   │   └── store/      # 状态管理
+│   └── package.json
+├── docs/               # 项目文档与 API 接口说明
+├── LICENSE
+└── README.md
+```
+---
+
 
 #### 前台启动方式
 安装所需文件 yarn install 
@@ -44,23 +187,25 @@ WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
 #### 默认后台账户密码
 [管理员]
 admin
-1234qwer
+123456
+
+[用户]
+fank
+123456
 
 #### 项目截图
-
 |  |  |
 |---------------------|---------------------|
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573535742.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573448407.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573529647.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573440230.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573513478.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573433552.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573504863.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573423902.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573495095.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573416496.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573485455.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573409005.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573478767.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573400113.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573470798.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573388355.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573458915.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573375511.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1736573453577.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png) |
-
+| ![](./assets/image%20(1).png) | ![](./assets/image%20(2).png) |
+| ![](./assets/image%20(3).png) | ![](./assets/image%20(4).png) |
+| ![](./assets/image%20(5).png) | ![](./assets/image%20(6).png) |
+| ![](./assets/image%20(7).png) | ![](./assets/image%20(8).png) |
+| ![](./assets/image%20(9).png) | ![](./assets/image%20(10).png) |
+| ![](./assets/image%20(11).png) | ![](./assets/image%20(12).png) |
+| ![](./assets/image%20(13).png) | ![](./assets/image%20(14).png) |
+| ![](./assets/image%20(15).png) | ![](./assets/image%20(16).png) |
+| ![](./assets/image%20(17).png) | ![](./assets/image%20(18).png) |
+| ![](./assets/image%20(19).png) | ![](./assets/image%20(20).png) |
 
 #### 演示视频
 
@@ -78,7 +223,10 @@ WeChat: `Storm_Berserker`
 
 > 项目部署调试不好包退！功能逻辑没讲明白包退！
 
+<div align=center><img align="center" src="./assets/product_word.png" alt="fankekeke" /></div>
+
 #### 其它资源
+[2026年-答辩顺利通过-客户评价🀄](https://berserker287.github.io/2026/06/29/2026%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
 [2025年-答辩顺利通过-客户评价🍜](https://berserker287.github.io/2025/06/18/2025%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
@@ -101,3 +249,9 @@ WeChat: `Storm_Berserker`
 `网站建设、小程序、H5、APP、各种系统 选题+开题报告+任务书+程序定制+安装调试+项目讲解+论文+答辩PPT`
 
 More info: [悲伤的橘子树](https://berserker287.github.io/)
+
+<div align="center"><img align="center" src="./assets/chat_qr_code.png" alt="fankekeke" width=250 /></div>
+
+<p><img align="center" src="./assets/wechat_group.png" alt="fankekeke" /></p>
+
+**感谢查看**
